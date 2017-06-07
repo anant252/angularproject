@@ -1,0 +1,47 @@
+<div class='row' style="padding:18px">
+	<div class="col-md-5" style="border-bottom: 1px solid; padding-left:0px">
+		<p style='padding-bottom: 2px'>Order</p>
+	</div>	
+</div>
+<div class='row' style="margin:18px;border-bottom: 1px solid;padding-bottom: 3px">
+	<div class="col-md-4" style=" padding-left:0px;">
+		Item Name
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		Count
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		Amount
+	</div>	
+</div>
+
+
+
+<div class='row' ng-repeat="(name,contents) in order.theOrder" style="margin:18px;margin-top:10px;padding-top: 2px">
+	<div class="col-md-4" style=" padding-left:0px;">
+		{{name}}
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		{{contents.quantity}} <a ng-click="order.increase(name)" style="color:#0000ff">[+]</a> <a ng-click="order.decrease(name)" style="color:#0000ff">[-]</a>
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		Rs {{contents.amount}}
+	</div>	
+</div>
+
+
+
+<div class='row' style="border-top: 1px solid; margin: 18px;padding-top:10px">
+	<div class="col-md-4" style=" padding-left:0px;">
+		Total Items
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		{{order.m[6]}}
+	</div>	
+	<div class="col-md-4" style=" padding-left:0px;">
+		Rs {{order.m[5]}}
+	</div>	
+</div>
+<div class="row text-center" style="margin-top: 10px">
+	<button class="btn" ui-sref="page2" style="display: block,margin:auto;background-color: #44bbff;color:#fff;border-radius: 0px">Confirm Order</button>
+</div>

@@ -1,0 +1,39 @@
+
+<div class="row" style="background-color:#eeeeef;padding-top:10px;border-left: solid 4px #dbdbdb">
+
+     <div class="row" style="padding-left: 25px;padding-bottom: 10px">
+            <div class="col-md-3" style="font-size:20px;padding-left:0px;">
+            	Thank You
+            </div>
+        </div>
+
+
+    <div class="col-md-offset-1 col-md-10">
+        <div class='row' style="margin:18px;padding-bottom: 3px">
+            Thank you {{information.bio.username1}} {{information.bio.username2}}
+        </div>
+
+
+
+        <div class='row' style="margin:18px;margin-top:10px;padding-top: 2px">
+            We have received your order for  Rs {{information.tally[5]}}
+        </div>
+
+
+
+        <div class='row' style=" margin: 18px;padding-top:10px">
+           We will deliver your order to the following address<br>
+           {{information.bio.address1}}<br>
+           {{information.bio.id}}<br>
+           {{information.bio.address2}}<br>
+           {{information.bio.city}}<br>
+           {{information.bio.state}}<br>
+           {{information.bio.pin}}<br><br>
+           {{information.bio.phone}}
+        </div>
+    </div>
+    
+</div>
+<div class="row text-center" style="margin-top: 10px">
+	<button class="btn" ui-sref="home" style="display: block,margin:auto;background-color: #44bbff;color:#fff;border-radius: 0px">Go Back to Home Page</button>
+</div>

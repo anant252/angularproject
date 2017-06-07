@@ -1,0 +1,34 @@
+<div class="row" style="padding:18px">
+	Menu
+</div>
+<div class="row" style="padding:18px" ng-repeat="(menutype, item) in menu.menulist">
+	{{menutype}}
+	<div class="row">
+		<div class="col-md-offset-1 col-md-5">
+			Item Name
+		</div>
+		<div class="col-md-3">
+			Price
+		</div>
+
+	</div>
+
+	<div class="row" ng-repeat="(name,contents) in item">
+		<div class="col-md-1">
+			{{$index+1}}
+		</div>
+		<div class="col-md-5">
+			{{name}}
+		</div>
+		<div class="col-md-3">
+			{{contents.price}}
+		</div>
+		<div class="col-md-1 text-center">
+			<a ng-click="menu.chooseitem(menutype,name)" style="color:#0000ff">[+]</a>
+		</div>
+		<div class="col-md-1 text-center">
+			<a ng-click="menu.decrement(menutype,name)" style="color:#0000ff">[-]</a>
+		</div>
+		
+	</div>
+</div>

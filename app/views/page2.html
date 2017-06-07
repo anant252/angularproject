@@ -1,0 +1,136 @@
+
+<div class="row">
+	
+	
+	<form name='registration' onSubmit="return formValidation();">
+    
+    <div class="row" style="padding: 10px;margin-bottom: 20px;border-left: solid 4px #dbdbdb;background-color:  #eeeeef">
+
+        <div class="row" style="padding-left: 25px;padding-bottom: 10px">
+            <div class="col-md-3" style="font-size:20px;padding-left:0px;border-bottom: solid 2px #dddddd">Checkout</div>
+        </div>
+
+        <div class="col-md-offset-1 col-md-8">
+
+		<div class='row'>
+			<div class="col-md-3">
+				<label for="fname">First Name</label>
+				<input ng-model="fname" type="text" name="fname" required style="width:100%" size="12">
+				<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+			</div>
+			<div class="col-md-3">
+				<label for="lname">Last Name</label>
+				<input type="text" name="lname" required style="width:100%">
+				<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+			</div>
+		</div>	
+        <div class=row>
+            <div class="col-md-6">                
+                <label for="address1">Address1</label>
+                <input type="text" name="address1" required style="width:100%">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+            
+        </div>  
+        <div class=row>
+            <div class="col-md-6">                
+                <label for="address2">Address2</label>
+                <input type="text" name="address2" required style="width:100%">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+            
+        </div>
+
+        <div class=row>
+            <div class="col-md-3">
+                <label for="city">City</label>
+                <input type="text" name="city" required style="width:100%" size="12">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+            <div class="col-md-3">
+                <label for="state">State</label>
+                <input type="text" name="state" required style="width:100%">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+            <div class="col-md-3">
+                <label for="pin">Pin</label>
+                <input type="text" name="pin" required style="width:100%">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+        </div>
+        <div class=row>
+            <div class="col-md-3">                
+                <label for="phone">Phone No.</label>
+                <input type="text" name="phone" required style="width:100%">
+                <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.
+            </div>
+            
+        </div>
+
+        </div>
+
+
+
+    </div>
+
+    
+    <div class="row" style="background-color:#eeeeef;padding-top:10px;border-left: solid 4px #dbdbdb">
+
+     <div class="row" style="padding-left: 25px;padding-bottom: 10px">
+            <div class="col-md-3" style="font-size:20px;padding-left:0px;border-bottom: solid 2px #dddddd">Order Summary</div>
+        </div>
+
+
+    <div class="col-md-offset-1 col-md-8">
+        <div class='row' style="margin:18px;border-bottom: 2px solid #dddddd;padding-bottom: 3px">
+            <div class="col-md-4" style=" padding-left:0px;">
+                Item Name
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                Count
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                Amount
+            </div>  
+        </div>
+
+
+
+        <div class='row' ng-repeat="(name,contents) in menu.theOrder" style="margin:18px;margin-top:10px;padding-top: 2px">
+            <div class="col-md-4" style=" padding-left:0px;">
+                {{name}}
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                {{contents.quantity}} <a ng-click="menu.increase(name)" style="color:#0000ff">[+]</a> <a ng-click="menu.decrease(name)" style="color:#0000ff">[-]</a>
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                Rs {{contents.amount}}
+            </div>  
+        </div>
+
+
+
+        <div class='row' style="border-top: 1px solid #dddddd; margin: 18px;padding-top:10px">
+            <div class="col-md-4" style=" padding-left:0px;">
+                Total Items
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                {{menu.m[6]}}
+            </div>  
+            <div class="col-md-4" style=" padding-left:0px;">
+                Rs {{menu.m[5]}}
+            </div>  
+        </div>
+        </div>
+   </div>
+    <div class="row text-center" style="margin-top: 10px">
+        <input type="submit" name="submit" class="btn" ui-sref="ordered" style="display: block,margin:auto;background-color: #44bbff;color:#fff;border-radius: 0px" value="Confirm Order"></input>
+    </div>
+     
+
+	</form>
+
+</div>
+
+
+
